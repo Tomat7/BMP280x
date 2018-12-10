@@ -1,11 +1,13 @@
-#include "BMP280x.h"
-BMP280x bmp280;
-
 #define BME280_ADDRESS 0x76   // The Address need to find by i2c_scanner.ino
+
+#include "BMP280x.h"
+BMP280x bmp280(BME280_ADDRESS);
+
+
 
 void setup()
 {
-  bmp280.init(BME280_ADDRESS);
+  bmp280.init();
   Serial.begin(115200);
 }
 
